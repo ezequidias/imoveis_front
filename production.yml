@@ -1,0 +1,22 @@
+version: "3.8"
+
+networks:
+  sail:
+    name: sail
+    driver: bridge
+  frontend:
+    name: frontend
+    driver: bridge
+
+services:
+  imoveis_front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    image: imoveis_front
+    ports:
+      - "8070:8070"
+    networks:
+      - frontend
+      - sail
