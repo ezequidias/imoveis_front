@@ -36,7 +36,7 @@ export const useAuthStore = defineStore({
         },
         async register(user : object) {
           try{
-            const res = await this.$axios.post('/signup', user);
+            const res = await this.$axios.post('/register', user);
             this.status.loggedIn = false;
             this.user = null;
             return res;
