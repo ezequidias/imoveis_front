@@ -1,9 +1,8 @@
 FROM node:14.18.2
-RUN apt update -y && apt upgrade -y
 WORKDIR /app
 COPY ./ .
 RUN npm install
-EXPOSE 8070
+EXPOSE 3000
 RUN npm run build
 CMD ["npm", "run", "start"]
 

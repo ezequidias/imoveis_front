@@ -1,9 +1,11 @@
 version: '3.8'
 
 networks:
-  # express_api_backend:
-  #   external: true
+  sail:
+    name: sail
+    driver: bridge
   frontend:
+    name: frontend
     driver: bridge
 
 services:
@@ -24,4 +26,4 @@ services:
       - '.:/app'
     networks:
       - frontend
-      # - express_api_backend
+      - sail
